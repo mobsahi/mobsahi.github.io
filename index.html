@@ -176,39 +176,54 @@
     </div>
 </section>
 
-<section class="cid-rzMreKQP39" id="form2-6">
+<div id="custom-html-e"><!-- Type valid HTML here -->
+  <script type="text/javascript">
+  const setup = (function () {
+    // console.log('setup');
+    document.getElementById('sendMessage').onsubmit = function (e) {
+      e.preventDefault();
+      console.log('click');
+      const country = '966';
+        
+      const number = '563594721'
+        .replace(/\D/g, '')
+        .replace(new RegExp(`^${country}`), '');
+      const text = document.getElementById('text').value;
+      if (!number) {
+        alert('Invalid number');
+        return;
+      }
+      link = `https://wa.me/${country}${number}?text=${text}`;
+      //link = `https://web.whatsapp.com/send?phone=${country}${number}&text=${text}`;
+      console.log(number, link);
+      window.open(link);
+    };
+  })
+  if (window.attachEvent) {
+    window.attachEvent('onload', setup);
+  } else {
+    window.addEventListener('load', setup, false);
+  }
+  </script>
 
-    
-
-    
     <div class="container">
         <div class="row justify-content-center">
-            <div class="form-1 col-md-8 col-sm-12" data-form-type="formoid">
-                <!---Formbuilder Form--->
-                <form action="https://wa.me/966563594721/?text=Hi" method="POST" class="mbr-form form-with-styler">
-                    <div class="form-row">
-                        
-                        <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12"></div>
-                    </div>
-                    <div class="dragArea form-row">
-                        <div class="col-md-12">
-                            <h2 class="mbr-fonts-style mbr-fonts-style mbr-fonts-style mbr-section-heading display-2">Get in touch. Drop me a message on Whatsapp!<br>
-                                                        </h2>
-                        </div>
-                        
-                        
-                        
-                        
-                        <div data-for="message" class="col-md-12 form-group ">
-                            <textarea type="textarea" name="message" placeholder="Message*" data-form-field="Message" class="form-control display-7" id="message-form2-6"></textarea>
-                        </div>
-                        <div class="col -auto input-group-btn"><button type="submit" class="btn btn-form btn-success display-4" href="href="https://api.whatsapp.com/send?phone=966563594721" target="_blank"><span class="socicon socicon-whatsapp mbr-iconfont mbr-iconfont-btn"></span>SEND</button></div>
-                    </div>
-                </form><!---Formbuilder Form--->
+            <div class="form-1 col-md-8 col-sm-12">
+
+    <div>
+<h1>Drop me a massage on WhatsApp!</h1>
             </div>
-        </div>
-   </div>
-</section>
+
+<form method="POST" id="sendMessage">
+    <div>
+        <input class="col-md-12 form-group" type="mensagem" id="text" placeholder="Your Message (Optional)" autocomplete="off">
+    </div>
+    
+<div class="col -auto input-group-btn "><button id="send" type="submit" class="btn btn-form btn-success"><span class="socicon socicon-whatsapp mbr-iconfont mbr-iconfont-btn"></span>Send on WhatsApp</button></div>
+    </form>
+</div>
+
+</div></div></div>
 
 <section class="cid-rzMrbJWA9w" id="features5-4">
 
@@ -295,8 +310,8 @@
 
 
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
-  <script src="assets/tether/tether.min.js"></script>
   <script src="assets/popper/popper.min.js"></script>
+  <script src="assets/tether/tether.min.js"></script>
   <script src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5"></script>
   <script src="https://apis.google.com/js/plusone.js"></script>
   <script src="assets/facebook-plugin/facebook-script.js"></script>
@@ -304,12 +319,13 @@
   <script src="assets/dropdown/js/nav-dropdown.js"></script>
   <script src="assets/dropdown/js/navbar-dropdown.js"></script>
   <script src="assets/smoothscroll/smooth-scroll.js"></script>
-  <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
+  <script src="assets/typed/typed.min.js"></script>
   <script src="assets/parallax/jarallax.min.js"></script>
   <script src="assets/viewportchecker/jquery.viewportchecker.js"></script>
   <script src="assets/sociallikes/social-likes.js"></script>
-  <script src="assets/typed/typed.min.js"></script>
+  <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
   <script src="assets/theme/js/script.js"></script>
+  <script src="assets/formoid/formoid.min.js"></script>
   
   
 </body>
